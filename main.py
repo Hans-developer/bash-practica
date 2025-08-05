@@ -35,4 +35,4 @@ command = st.text_input("Ingresa un comando de Bash:")
 # Mostrar la descripción del comando
 if command:
     description = bash_commands.get(command.strip(), "Comando no encontrado. Intenta con otro.")
-    st.write(description)
+    st.success(description)
