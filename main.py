@@ -41,7 +41,7 @@ def main():
         if st.button("Enviar"):
             try:
                 # Dividir el comando y los argumentos
-                command_parts = shlex.split(user_input)
+                command_parts = user_input.split(user_input)
                 command = command_parts[0]
 
                 # Obtener la descripción del comando
