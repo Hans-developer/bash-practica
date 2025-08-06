@@ -146,16 +146,17 @@ comandos_linux = {
 # Título de la aplicación
 st.title("Buscador de Comandos de Linux")
 
-# Barra lateral para ingresar el comando
-comando_buscado = st.sidebar.text_input("Ingresa un comando de Linux:")
+# Campo de entrada para buscar el comando
+comando_buscado = st.text_input("Ingresa un comando de Linux:")
 
 # Buscar el comando en el diccionario
-if comando_buscado in comandos_linux:
-    st.subheader(f"Comando: {comando_buscado}")
-    st.write("**Descripción:**")
-    st.write(comandos_linux[comando_buscado]["descripcion"])
-    st.write("**Ejemplos de uso:**")
-    for ejemplo in comandos_linux[comando_buscado]["uso"]:
-        st.write(f"- {ejemplo}")
-else:
-    st.write("Comando no encontrado. Intenta con otro comando.")
+if comando_buscado:
+    if comando_buscado in comandos_linux:
+        st.subheader(f"Comando: {comando_buscado}")
+        st.write("**Descripción:**")
+        st.write(comandos_linux[comando_buscado]["descripcion"])
+        st.write("**Ejemplos de uso:**")
+        for ejemplo in comandos_linux[comando_buscado]["uso"]:
+            st.write(f"- {ejemplo}")
+    else:
+        st.write("Comando no encontrado. Intenta con otro comando.")
